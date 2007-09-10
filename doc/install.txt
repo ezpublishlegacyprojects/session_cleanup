@@ -1,0 +1,45 @@
+
+GENERAL INFORMATION
+===================
+
+Name:                     session_cleanup
+Description:              A cronjob for eZ publish which removes expired 
+                          sessions from the database.
+Developed and tested on:  3.x (MySQL, but should work with any
+                          SQL-compatible database, like PostgreSQL and
+                          Oracle, too)
+Author:                   Markus Bader ( all2e GmbH, http://www.all2e.com )
+Mail:                     m.bader@all2e.com
+Date of creation:         30th April 2007
+Last update:              -
+Version:                  1.0
+
+
+INSTALLATION
+============
+
+(1)  Extract the extension into your extension folder ex:"ezrootdir/extensions"
+
+(2)  Activate the extension either by using the administration interface
+     ("setup" >> "extensions" >> check "session_cleanup" >> "apply changes")
+     or add the following lines to your "settings/override/site.ini.append.php":
+
+     [ExtensionSettings]
+     ActiveExtensions[]=session_cleanup
+     
+     Remember to clear the ini cache files after activating the extension.
+
+(3)  FINISHED!
+     The cronjob is now automatically executed each time the runcronjobs.php         
+     script is called. You may also execute it manually by navigation to the 
+     root directory of your eZ publish installation and using the cronjob part  
+     command like: "php runcronjobs.php session_cleanup".
+     
+     You can now add the cronjob to you local crontab.
+     Please consult "http://ez.no/doc/ez_publish/technical_manual/3_8/features/
+     cronjobs/running_cronjobs" for further information about setting up the eZ 
+     cronjobs.
+     
+
+Thank you for using this script. If you have any problems, bugs, suggestions or
+any other feedback, please send me a mail to m.bader@all2e.com or leave a message on the contribution page on http://ez.no .
